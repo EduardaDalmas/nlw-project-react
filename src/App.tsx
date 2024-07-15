@@ -35,8 +35,14 @@ export function App() {
       return;
     }
 
+    if (emailsToInvite.includes(email)) {
+      alert('Esse e-mail já foi adicionado!');
+      return;
+    }
+
     setEmaiToInvite([...emailsToInvite, email]);
- 
+    
+    event.currentTarget.reset();
   }
 
   return (

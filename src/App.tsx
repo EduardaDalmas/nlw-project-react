@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { MapPin, Calendar, ArrowRight } from 'lucide-react';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+   <div className="h-screen flex items-center justify-center bg-pattern bg-no-repeat bg-center">
+     <div className="max-w-3xl w-full px-6 text-center space-y-10">
+      <div className='flex flex-col items-center gap-3'>
+        <img src="/logo.svg" alt="Plann.er" />
+        <p className="text-zinc-300 text-lg">Convide seus amigos e planeje sua próxima viagem!</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+     
+      <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3">
+        <div className='flex items-center gap-2 flex-1'>
+          <MapPin className="size-5 text-zinc-400" />
+          <input type="text" placeholder="Para onde você vai?" className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1" />
+        </div>
+       
+        <div className='flex items-center gap-2'>
+          <Calendar className="size-5 text-zinc-400" />
+          <input type="text" placeholder="Quando?" className="bg-transparent text-lg placeholder-zinc-400 w-48 outline-none" />
+        </div>
+
+        <div className='w-px h-6 bg-zinc-800' />
+
+        <button className='bg-lime-300 text-lime-950 rounded px-5 py-2 font-medium flex items-center gap-2 hover:bg-lime-400'>
+          Continuar
+          <ArrowRight className="size-5" />
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+
+      <p className="text-sm text-zinc-500">
+        Ao planejar sua viagem pela plann.er você automaticamente concorda <br />
+        com nossos <a className="text-zinc-300 underline" href="#">termos de uso</a> e <a className="text-zinc-300 underline" href="#">políticas de privacidade</a>.
       </p>
-    </>
+    </div>
+   </div>
   )
 }
 
-export default App

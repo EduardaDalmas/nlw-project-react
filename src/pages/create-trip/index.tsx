@@ -36,7 +36,7 @@ export function CreateTripPage() {
     event.preventDefault();
 
     const data = new FormData(event.currentTarget);
-    const email = data.get('email').toString();
+    const email = data.get('email')?.toString()
 
     if (!email) {
       return;
